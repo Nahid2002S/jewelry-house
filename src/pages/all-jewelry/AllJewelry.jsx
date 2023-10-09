@@ -7,12 +7,11 @@ const AllJewelry = () => {
     axios.get('http://localhost:5000/jewelry')
     .then(data => setJewelrys(data.data));
 
-    console.log(jewelrys)
 
     return (
-        <div className='px-20 bg-[#1f2735] py-5 h-[91vh]'>
+        <div className='px-20 bg-[#1f2735] py-5'>
             <h1 className='text-3xl font-bold py-3 text-white mb-2'>All Jewelry: {jewelrys.length}</h1>
-            <div className='grid grid-cols-3'>
+            <div className='grid grid-cols-3 gap-4'>
                 {
                     jewelrys.map(jewelry => <div key={jewelry._id} className="card w-96 bg-indigo-300 shadow-xl">
                     <figure><img src={jewelry.photo} alt="Shoes" /></figure>
