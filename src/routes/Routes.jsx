@@ -5,6 +5,7 @@ import Layout from "../layout/Layout";
 import Banner from "../pages/home/banner/Banner";
 import Registration from "../pages/registration/Registration";
 import Login from "../pages/login/Login";
+import AddJewelry from "../pages/addJewelry/AddJewelry";
   
   const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ import Login from "../pages/login/Login";
         {
           path: 'login',
           element: <Login></Login>
+        },
+        {
+          path: 'add-jewelry',
+          element: <AddJewelry></AddJewelry>
         }
       ]
     },

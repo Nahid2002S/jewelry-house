@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../authProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
 
@@ -16,10 +18,26 @@ const Registration = () => {
         const confirmPassword = form.confirmPassword.value;
         const photoUrl = form.photo.value;
 
+        const newUser = {name, email, photoUrl, role : 'client'};
+
         if(password == confirmPassword){
             registerUser(email,password)
         .then(result => {
             updateUser(name, photoUrl)
+
+            axios.post('http://localhost:5000/users', newUser)
+            .then(data => {
+              if(data.data.insertedId){
+                Swal.fire({
+                  position: 'center',
+                  icon: 'success',
+                  title: 'User Created Successfully!',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              }
+            })
+
             if(!result.user){
                 navigate('/register');
             }

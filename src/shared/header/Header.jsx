@@ -37,7 +37,7 @@ const Header = () => {
       <li><Link to='/' className='hover:text-blue-500'>Home</Link></li>
       <li><a>All Jewelry</a></li>
       <li><a>My Jewelry</a></li>
-      <li><a>Add Jewelry</a></li>
+      <li><Link to='/add-jewelry'>Add Jewelry</Link></li>
       <li><a>Blogs</a></li>
       {
         !user && <li><Link to='/register'>Register</Link></li>
