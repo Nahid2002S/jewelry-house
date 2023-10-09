@@ -35,7 +35,7 @@ const Registration = () => {
         <div className='flex justify-center items-center w-[100%] h-[95vh] bg-[#1f2735] '>
             <div className="w-[30rem]">
   <form onSubmit={handleRegister} className="bg-indigo-500 w-full shadow-md rounded px-8 pt-6 pb-8 mb-4 mt-4">
-    <h1 className='text-center text-2xl font-bold text-white mb-5'>Sign In</h1>
+    <h1 className='text-center text-2xl font-bold text-white mb-5'>Sign Up</h1>
     <div className="mb-3">
       <label className="block text-gray-200 text-sm font-bold mb-2" >
         Username
@@ -68,7 +68,7 @@ const Registration = () => {
     </div>
     <div className="flex items-center justify-between">
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        Sign In
+        Sign Up
       </button>
       <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
         Forgot Password?
