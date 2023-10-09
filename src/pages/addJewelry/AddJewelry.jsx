@@ -22,6 +22,13 @@ const AddJewelry = () => {
         axios.post('http://localhost:5000/jewelry', newJewelry)
         .then(data => {
             if(data.data.insertedId){
+
+                axios.patch(`http://localhost:5000/users/owner/${user.email}`)
+                .then(data =>{
+                    if(data.data.modifiedCount){
+                        
+                    }
+                })
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -29,6 +36,7 @@ const AddJewelry = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
+
             }
         })
     }

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../authProvider/AuthProvider';
 
 const Header = () => {
@@ -34,19 +34,20 @@ const Header = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><Link to='/' className='hover:text-blue-500'>Home</Link></li>
-      <li><a>All Jewelry</a></li>
-      <li><a>My Jewelry</a></li>
-      <li><Link to='/add-jewelry'>Add Jewelry</Link></li>
+      <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Home</NavLink></li>
+      <li><NavLink to='/all-jewelry' className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>All Jewelry</NavLink></li>
+      <li><NavLink to='/my-jewelry'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>My Jewelry</NavLink></li>
+      <li><NavLink to='/add-jewelry'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Add Jewelry</NavLink></li>
       <li><a>Blogs</a></li>
+      <li><NavLink to='/dashboard'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Dashboard</NavLink></li>
       {
-        !user && <li><Link to='/register'>Register</Link></li>
+        !user && <li><NavLink to='/register'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Register</NavLink></li>
       }
     </ul>
   </div>
   <div className="navbar-end flex gap-3">
   {
-    user && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+    user && <label title={user.name} tabIndex={0} className="btn btn-ghost btn-circle avatar">
     <div className="w-10 rounded-full">
       <img src={user.photoURL} />
     </div>
