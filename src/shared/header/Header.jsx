@@ -24,7 +24,7 @@ const Header = () => {
       <li><NavLink to='/my-jewelry'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>My Jewelry</NavLink></li>
       <li><NavLink to='/add-jewelry'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Add Jewelry</NavLink></li>
       <li><NavLink to='/blogs'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Blogs</NavLink></li>
-      <li><NavLink to='/dashboard/dashboard-home'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Dashboard</NavLink></li>
+     { user ? <li><NavLink to='/dashboard/dashboard-home'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Dashboard</NavLink></li> : ''}
       {
         !user && <li><NavLink to='/register'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Register</NavLink></li>
       }
@@ -39,7 +39,7 @@ const Header = () => {
       <li><NavLink to='/my-jewelry'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>My Jewelry</NavLink></li>
       <li><NavLink to='/add-jewelry'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Add Jewelry</NavLink></li>
       <li><NavLink to='/blogs'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Blogs</NavLink></li>
-      <li><NavLink to='/dashboard/dashboard-home'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Dashboard</NavLink></li>
+      { user ? <li><NavLink to='/dashboard/dashboard-home'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Dashboard</NavLink></li> : ''}
       {
         !user && <li><NavLink to='/register'  className={({ isActive }) => (isActive ? 'text-indigo-500 font-bold' : '')}>Register</NavLink></li>
       }

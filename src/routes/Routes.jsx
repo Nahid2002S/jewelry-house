@@ -11,6 +11,7 @@ import MyJewelry from "../pages/myJewelry/MyJewelry";
 import DashboardLayout from "../layout/dashboardLayout";
 import DashboardHome from "../pages/dashboard/dashboardHome/DashboardHome";
 import Blogs from "../pages/blogs/Blogs";
+import PrivateRoute from "./PrivateRoutes";
   
   const router = createBrowserRouter([
     {
@@ -39,7 +40,7 @@ import Blogs from "../pages/blogs/Blogs";
         },
         {
           path: 'my-jewelry',
-          element: <MyJewelry></MyJewelry>
+          element: <PrivateRoute><MyJewelry></MyJewelry></PrivateRoute>
         },
         {
           path: 'blogs',
@@ -54,7 +55,7 @@ import Blogs from "../pages/blogs/Blogs";
       children: [
         {
           path: 'dashboard-home',
-          element: <DashboardHome></DashboardHome>
+          element: <PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>
         },
         {
           path: 'add-jewelry',

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const AllJewelry = () => {
     const [jewelrys, setJewelrys] = useState([]);
 
-    axios.get('https://jewelry-house-server-rk778b7cx-nahid2002s.vercel.app/jewelry')
+    axios.get('https://jewelry-house-server.vercel.app/jewelry')
     .then(data => setJewelrys(data.data));
 
 

@@ -19,11 +19,11 @@ const AddJewelry = () => {
 
         const newJewelry = {photo, name, price, quantity, ownerName, ownerEmail};
         
-        axios.post('https://jewelry-house-server-rk778b7cx-nahid2002s.vercel.app/jewelry', newJewelry)
+        axios.post('https://jewelry-house-server.vercel.app/jewelry', newJewelry)
         .then(data => {
             if(data.data.insertedId){
 
-                axios.patch(`https://jewelry-house-server-rk778b7cx-nahid2002s.vercel.app/users/owner/${user.email}`)
+                axios.patch(`https://jewelry-house-server.vercel.app/users/owner/${user.email}`)
                 .then(data =>{
                     if(data.data.modifiedCount){
                         

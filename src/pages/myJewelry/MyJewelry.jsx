@@ -7,7 +7,7 @@ const MyJewelry = () => {
     const {user} = useContext(AuthContext);
     const [myJewelry, setMyJewelry] = useState([]);
 
-    axios.get(`https://jewelry-house-server-rk778b7cx-nahid2002s.vercel.app/jewelry/${user.email}`)
+    axios.get(`https://jewelry-house-server.vercel.app/jewelry/${user.email}`)
     .then(data => setMyJewelry(data.data));
 
     console.log(myJewelry)

@@ -6,7 +6,7 @@ const DashboardHome = () => {
     const {user} = useContext(AuthContext);
     const [currentUser, setCurrentUser] = useState({});
 
-    axios.get(`https://jewelry-house-server-rk778b7cx-nahid2002s.vercel.app/users/${user?.email}`)
+    axios.get(`https://jewelry-house-server.vercel.app/users/${user?.email}`)
     .then(data => setCurrentUser(data.data));
 
 
