@@ -25,7 +25,7 @@ const Registration = () => {
         .then(result => {
             updateUser(name, photoUrl)
 
-            axios.post('http://localhost:5000/users', newUser)
+            axios.post('https://jewelry-house-server-rk778b7cx-nahid2002s.vercel.app/users', newUser)
             .then(data => {
               if(data.data.insertedId){
                 Swal.fire({
