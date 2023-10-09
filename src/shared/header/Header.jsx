@@ -34,13 +34,14 @@ const Header = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a className='hover:text-blue-500'>Home</a></li>
+      <li><Link to='/' className='hover:text-blue-500'>Home</Link></li>
       <li><a>All Jewelry</a></li>
       <li><a>My Jewelry</a></li>
-      <li><a>All Jewelry</a></li>
       <li><a>Add Jewelry</a></li>
       <li><a>Blogs</a></li>
-      <li><Link to='/register'>Register</Link></li>
+      {
+        !user && <li><Link to='/register'>Register</Link></li>
+      }
     </ul>
   </div>
   <div className="navbar-end flex gap-3">

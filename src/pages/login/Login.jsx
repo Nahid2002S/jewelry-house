@@ -3,7 +3,7 @@ import { AuthContext } from '../../authProvider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const {loginUser} = useContext(AuthContext);
+    const {loginUser, googleAuth} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -55,9 +55,14 @@ const Login = () => {
       <input name='password' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="**********"/>
     </div>
     <div className="flex items-center justify-between">
+      <div className='flex gap-3'>
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         Sign In
       </button>
+      <button onClick={handleGoogleLogin} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Sign In With Google
+      </button>
+      </div>
       <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
         Forgot Password?
       </a>
