@@ -9,7 +9,6 @@ const DashboardHome = () => {
     axios.get(`http://localhost:5000/users/${user?.email}`)
     .then(data => setCurrentUser(data.data));
 
-    console.log(currentUser)
 
     return (
         <div>

@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../authProvider/AuthProvider';
+import axios from 'axios';
 
 const DashboardLayout = () => {
+
+    const {user} = useContext(AuthContext);
+    const [currentUser, setCurrentUser] = useState({});
+
+    axios.get(`http://localhost:5000/users/${user?.email}`)
+    .then(data => setCurrentUser(data.data));
+
     return (
         <div>
        <div className="drawer lg:drawer-open">
@@ -16,8 +25,13 @@ const DashboardLayout = () => {
     <ul className="menu p-4 w-80 min-h-full bg-[#2f3e58] text-white text-semibold ">
       {/* Sidebar content here */}
       <li><Link to='/dashboard/dashboard-home' className='hover:text-indigo-500 font-semibold'>Dashboard Home</Link></li>
-      <li><Link to='/dashboard/my-jewelry' className='hover:text-indigo-500 font-semibold'>My Jewelry</Link></li>
-      <li><Link to='/dashboard/add-jewelry' className='hover:text-indigo-500 font-semibold'>Add Jewelry</Link></li>
+      {
+        currentUser.role == 'owner' ?
+        <>
+         <li><Link to='/dashboard/my-jewelry' className='hover:text-indigo-500 font-semibold'>My Jewelry</Link></li>
+        <li><Link to='/dashboard/add-jewelry' className='hover:text-indigo-500 font-semibold'>Add Jewelry</Link></li>
+        </> : ''
+      }
       <div className="divider divider-primary"></div>
       <li><Link to='/' className='hover:text-indigo-500 font-semibold'>Home</Link></li>
     </ul> 

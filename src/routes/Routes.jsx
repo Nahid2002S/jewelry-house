@@ -10,6 +10,7 @@ import AllJewelry from "../pages/all-jewelry/AllJewelry";
 import MyJewelry from "../pages/myJewelry/MyJewelry";
 import DashboardLayout from "../layout/dashboardLayout";
 import DashboardHome from "../pages/dashboard/dashboardHome/DashboardHome";
+import Blogs from "../pages/blogs/Blogs";
   
   const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ import DashboardHome from "../pages/dashboard/dashboardHome/DashboardHome";
         {
           path: 'my-jewelry',
           element: <MyJewelry></MyJewelry>
+        },
+        {
+          path: 'blogs',
+          element: <Blogs></Blogs>
         }
       ]
     },
